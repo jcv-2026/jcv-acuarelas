@@ -2,6 +2,12 @@
 
 Galería de 409 obras, con búsqueda por título o motivo, filtros por año, recorridos temáticos, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
 
+## Web publicada
+
+La galería está disponible en **https://jcv-2026.github.io/jcv-acuarelas/**.
+
+El flujo [Publicar galería en GitHub Pages](https://github.com/jcv-2026/jcv-acuarelas/actions/workflows/pages.yml) se ejecuta al subir cambios a `main`. Instala las dependencias, construye la web y comprueba el catálogo y sus imágenes antes de publicar `dist/`. También se puede iniciar manualmente desde GitHub Actions. La configuración está en `.github/workflows/pages.yml`.
+
 ## Arrancar
 
 Requiere Node.js 22 o posterior.
