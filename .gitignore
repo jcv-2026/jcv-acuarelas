@@ -1,0 +1,48 @@
+# Archivo fotográfico, originales, descartes y trabajo intermedio: solo local.
+/.local/
+/paintings/
+/seleccionadas/
+/descartadas/
+/pendientes/
+/documentacion/
+/revision/
+/catalogo/
+
+# Configuración personal y conexiones de alojamiento.
+.env
+.env.*
+!.env.example
+/.openai/
+
+# Dependencias, compilaciones, cachés y resultados de pruebas.
+node_modules/
+dist/
+.cache/
+test-results/
+playwright-report/
+blob-report/
+__pycache__/
+*.py[cod]
+*.log
+*.tar
+*.tar.gz
+*.zip
+*.bundle
+
+# Fotografías fuera de la carpeta de imágenes de la web.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.avif
+*.heic
+*.mp4
+*.mov
+!public/media/*.webp
+
+# Archivos del sistema y del editor.
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
