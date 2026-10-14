@@ -4,28 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="Las acuarelas de Javier Cotelo Villarreal (1932–2026). Una colección para recorrer su pintura a través de los años y conservar su memoria.">
-  <meta property="og:title" content="Javier Cotelo Villarreal · Acuarelas">
-  <meta property="og:description" content="La pintura y la memoria de Javier Cotelo Villarreal (1932–2026). Acuarelas, recorridos y una mirada a través de los años.">
+  <meta name="description" data-i18n-content="Las acuarelas de Javier Cotelo Villarreal (1932–2026). Una colección para recorrer su pintura a través de los años y conservar su memoria." content="Las acuarelas de Javier Cotelo Villarreal (1932–2026). Una colección para recorrer su pintura a través de los años y conservar su memoria.">
+  <meta property="og:title" data-i18n-content="Javier Cotelo Villarreal · Acuarelas" content="Javier Cotelo Villarreal · Acuarelas">
+  <meta property="og:description" data-i18n-content="La pintura y la memoria de Javier Cotelo Villarreal (1932–2026). Acuarelas, recorridos y una mirada a través de los años." content="La pintura y la memoria de Javier Cotelo Villarreal (1932–2026). Acuarelas, recorridos y una mirada a través de los años.">
   <meta property="og:type" content="website">
-  <title>Javier Cotelo Villarreal · Acuarelas</title>
+  <title data-i18n="Javier Cotelo Villarreal · Acuarelas">Javier Cotelo Villarreal · Acuarelas</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
   <script src="./preferences.js"></script>
+  <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-i18n="Saltar al contenido">Saltar al contenido</a>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Javier Cotelo Villarreal, inicio"><span class="monogram">jcv<span>.</span></span><span class="brand-name">Javier Cotelo Villarreal<small>ACUARELAS</small></span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button>
-    <nav id="main-navigation" aria-label="Navegación principal"><a href="#inicio" data-nav="inicio">Inicio</a><a href="#coleccion" data-nav="coleccion">La colección</a><a href="#cronologia" data-nav="cronologia">Cronología</a><a href="#recorridos" data-nav="recorridos">Recorridos</a><a href="#javier" data-nav="javier">Javier</a><a href="#archivo" data-nav="archivo">El archivo</a></nav>
-    <div class="header-actions"><button id="text-size" class="text-size-toggle" aria-pressed="false"><span aria-hidden="true">Aa</span> Letra grande</button><a class="favorites-link" href="#favoritas" aria-label="Mis favoritas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="favorites-label">Mi selección</span><span id="favorite-count">0</span></a></div>
+    <a class="brand" href="#inicio" data-i18n-aria-label="Javier Cotelo Villarreal, inicio" aria-label="Javier Cotelo Villarreal, inicio"><span class="monogram">jcv<span>.</span></span><span class="brand-name">Javier Cotelo Villarreal<small data-i18n="ACUARELAS">ACUARELAS</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span data-i18n="Menú">Menú</span></button>
+    <nav id="main-navigation" data-i18n-aria-label="Navegación principal" aria-label="Navegación principal"><a href="#inicio" data-nav="inicio" data-i18n="Inicio">Inicio</a><a href="#coleccion" data-nav="coleccion" data-i18n="La colección">La colección</a><a href="#cronologia" data-nav="cronologia" data-i18n="Cronología">Cronología</a><a href="#recorridos" data-nav="recorridos" data-i18n="Recorridos">Recorridos</a><a href="#javier" data-nav="javier">Javier</a><a href="#archivo" data-nav="archivo" data-i18n="El archivo">El archivo</a></nav>
+    <div class="header-actions">
+      <div class="preferences">
+        <button id="preferences-toggle" class="preferences-toggle" aria-expanded="false" aria-controls="preferences-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="var(--paper)"/><circle cx="15" cy="17" r="3" fill="var(--paper)"/></svg><span data-i18n="Preferencias">Preferencias</span></button>
+        <section id="preferences-panel" class="preferences-panel" aria-labelledby="preferences-title" hidden>
+          <h2 id="preferences-title" data-i18n="Preferencias">Preferencias</h2>
+          <label class="preference-label" for="language" data-i18n="Idioma">Idioma</label>
+          <select id="language"><option value="auto" data-i18n="Idioma del navegador">Idioma del navegador</option><option value="es" lang="es">Español</option><option value="en" lang="en">English</option><option value="it" lang="it">Italiano</option></select>
+          <fieldset class="theme-options"><legend class="preference-label" data-i18n="Apariencia">Apariencia</legend><div>
+            <label><input type="radio" name="theme" value="system" checked><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><span data-i18n="Sistema">Sistema</span></span></label>
+            <label><input type="radio" name="theme" value="light"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span data-i18n="Claro">Claro</span></span></label>
+            <label><input type="radio" name="theme" value="dark"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/></svg><span data-i18n="Oscuro">Oscuro</span></span></label>
+          </div></fieldset>
+          <div class="text-preference"><span class="preference-label" data-i18n="Tamaño de letra">Tamaño de letra</span><button id="text-size" class="text-size-toggle" aria-pressed="false"><span aria-hidden="true">Aa</span><span data-i18n="Letra grande">Letra grande</span></button></div>
+          <p class="preferences-note" data-i18n="Tus preferencias se guardan en este navegador.">Tus preferencias se guardan en este navegador.</p>
+        </section>
+      </div>
+      <a class="favorites-link" href="#favoritas" data-i18n-aria-label="Mis favoritas" aria-label="Mis favoritas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="favorites-label" data-i18n="Mi selección">Mi selección</span><span id="favorite-count">0</span></a>
+    </div>
   </header>
-  <main id="main" tabindex="-1"><div class="loading"><span class="loading-mark">jcv.</span><p>Abriendo el cuaderno…</p></div></main>
-  <footer class="site-footer"><div><a href="#javier" class="footer-signature">Javier Cotelo Villarreal<span>1932–2026</span></a><p>Su mirada permanece en sus acuarelas.</p></div><div class="footer-links"><a href="#coleccion">La colección ↗</a><a href="#cronologia">A través de los años ↗</a><a href="#javier">Recordar a Javier ↗</a><a href="#archivo">El archivo ↗</a></div><div class="footer-bottom"><span>En memoria de Javier Cotelo Villarreal</span><span>Un lugar para volver a sus obras.</span></div></footer>
+  <main id="main" tabindex="-1"><div class="loading"><span class="loading-mark">jcv.</span><p data-i18n="Abriendo el cuaderno…">Abriendo el cuaderno…</p></div></main>
+  <footer class="site-footer"><div><a href="#javier" class="footer-signature">Javier Cotelo Villarreal<span>1932–2026</span></a><p data-i18n="Su mirada permanece en sus acuarelas.">Su mirada permanece en sus acuarelas.</p></div><div class="footer-links"><a href="#coleccion" data-i18n="La colección ↗">La colección ↗</a><a href="#cronologia" data-i18n="A través de los años ↗">A través de los años ↗</a><a href="#javier" data-i18n="Recordar a Javier ↗">Recordar a Javier ↗</a><a href="#archivo" data-i18n="El archivo ↗">El archivo ↗</a></div><div class="footer-bottom"><span data-i18n="En memoria de Javier Cotelo Villarreal">En memoria de Javier Cotelo Villarreal</span><span data-i18n="Un lugar para volver a sus obras.">Un lugar para volver a sus obras.</span></div></footer>
   <dialog id="art-dialog" aria-labelledby="art-title"><div id="art-content"></div></dialog>
   <div class="toast" id="toast" role="status"></div>
-  <noscript><p class="noscript">Activa JavaScript para explorar la colección y abrir las fichas de las obras.</p></noscript>
+  <noscript><p class="noscript" data-i18n="Activa JavaScript para explorar la colección y abrir las fichas de las obras.">Activa JavaScript para explorar la colección y abrir las fichas de las obras.</p></noscript>
 </body>
 </html>

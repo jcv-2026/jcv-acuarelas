@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+test.use({locale:'es-ES',colorScheme:'light'});
 test('browse, filter, favorite, reload, zoom, deep link, and export the real collection',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await expect(page.locator('h1')).toContainText('Una forma de');
@@ -79,6 +80,7 @@ for(const width of [320,768,1440])test(`large text persists and every page reflo
   await page.goto('/');
   const control=page.getByRole('button',{name:'Letra grande'});
   const before=await page.locator('.hero-description').evaluate(e=>parseFloat(getComputedStyle(e).fontSize));
+  await page.locator('#preferences-toggle').click();
   await control.click();await expect(control).toHaveAttribute('aria-pressed','true');
   const after=await page.locator('.hero-description').evaluate(e=>parseFloat(getComputedStyle(e).fontSize));
   expect(after/before).toBeCloseTo(1.25);
@@ -91,6 +93,7 @@ for(const width of [320,768,1440])test(`large text persists and every page reflo
   await page.goto('/#coleccion?obra=AC1450');await expect(page.locator('#art-dialog')).toBeVisible();
   await expect.poll(()=>page.locator('#art-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
   await page.keyboard.press('Escape');
+  await page.locator('#preferences-toggle').click();
   await control.click();await expect(control).toHaveAttribute('aria-pressed','false');
   await page.reload();await expect(page.locator('html')).not.toHaveClass(/large-text/);
 });
@@ -118,7 +121,7 @@ test('mobile navigation supports touch, keyboard, route changes and resizing',as
   const nav=page.getByRole('navigation',{name:'Navegación principal'});
   await expect(menu).toHaveAttribute('aria-expanded','false');
   await expect(nav).not.toBeVisible();
-  await expect(page.getByRole('button',{name:'Letra grande'})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Preferencias',exact:true})).toBeVisible();
   await expect(page.getByRole('link',{name:'Mis favoritas'})).toBeVisible();
   expect(await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(170);
   await menu.click();await expect(nav).toBeVisible();
@@ -140,7 +143,8 @@ test('mobile navigation supports touch, keyboard, route changes and resizing',as
 test('reading controls and collection remain usable when storage is unavailable',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError');}});});
-  await page.goto('/');await page.getByRole('button',{name:'Letra grande'}).click();
+  await page.goto('/');await page.locator('#preferences-toggle').click();await page.getByRole('button',{name:'Letra grande'}).click();
+  await page.keyboard.press('Escape');
   await expect(page.locator('html')).toHaveClass(/large-text/);
   await page.getByRole('link',{name:'Explorar las acuarelas'}).click();
   await expect(page.locator('#gallery .art-card')).toHaveCount(24);
