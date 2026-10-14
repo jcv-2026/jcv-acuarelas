@@ -40,6 +40,12 @@ jobs:
       - name: Comprobar el catálogo y las imágenes
         run: npm test
 
+      - name: Preparar Chromium para las pruebas
+        run: npx playwright install --with-deps chromium
+
+      - name: Comprobar la navegación y las preferencias
+        run: npm run test:browser
+
       - name: Preparar los archivos para publicar
         uses: actions/upload-pages-artifact@v5
         with:

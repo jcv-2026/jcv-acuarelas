@@ -12,7 +12,7 @@ En móvil, la navegación se abre con «Menú»; el acceso a «Preferencias» y 
 
 La galería está disponible en **https://jcv-2026.github.io/jcv-acuarelas/**.
 
-El flujo [Publicar galería en GitHub Pages](https://github.com/jcv-2026/jcv-acuarelas/actions/workflows/pages.yml) se ejecuta al subir cambios a `main`. Instala las dependencias, construye la web y comprueba el catálogo y sus imágenes antes de publicar `dist/`. También se puede iniciar manualmente desde GitHub Actions. La configuración está en `.github/workflows/pages.yml`.
+El flujo [Publicar galería en GitHub Pages](https://github.com/jcv-2026/jcv-acuarelas/actions/workflows/pages.yml) se ejecuta al subir cambios a `main`. Instala las dependencias, construye la web y comprueba el catálogo, sus imágenes y la navegación con Chromium antes de publicar `dist/`. Si alguna prueba falla, la publicación se detiene. También se puede iniciar manualmente desde GitHub Actions. La configuración está en `.github/workflows/pages.yml`.
 
 ## Arrancar
 
