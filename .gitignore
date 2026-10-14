@@ -39,6 +39,7 @@ __pycache__/
 *.mp4
 *.mov
 !public/media/*.webp
+!public/portraits/*.webp
 
 # Archivos del sistema y del editor.
 .DS_Store

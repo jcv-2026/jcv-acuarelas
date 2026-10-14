@@ -98,12 +98,43 @@ for(const width of [320,768,1440])test(`large text persists and every page reflo
 test('biography presents the memorial dates and links its sources',async({page})=>{
   await page.goto('/#javier');
   await expect(page.locator('h1')).toContainText('Javier Cotelo');
+  await expect(page.locator('h1')).toContainText('Villarreal');
+  await expect(page).toHaveTitle(/Javier Cotelo Villarreal/);
+  const portrait=page.getByRole('img',{name:'Javier Cotelo Villarreal durante un paseo por un jardín'});
+  await expect(portrait).toBeVisible();
+  await expect.poll(()=>portrait.evaluate(img=>img.complete&&img.naturalWidth===960)).toBe(true);
   await expect(page.locator('.artist-dates')).toContainText('10 de octubre de 2026');
   await expect(page.locator('.artist-prose')).toContainText('arquitecto',{ignoreCase:true});
   await expect(page.locator('.bio-sources a')).toHaveCount(4);
   await expect(page.locator('.bio-sources a').first()).toHaveAttribute('href','https://opusdei.org/es/article/javier-cotelo/');
   await expect(page.locator('.bio-sources a').nth(1)).toHaveAttribute('href','https://opusdei.org/es/article/javier-cotelo-recuerdos-josemaria-escriva/');
   await expect(page.locator('.bio-sources a').nth(2)).toHaveAttribute('href','https://opusdei.org/it/article/intervista-a-javier-cotelo-autista-di-san-josemaria-storie-stra-ordinarie/');
+});
+
+test('mobile navigation supports touch, keyboard, route changes and resizing',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  const menu=page.getByRole('button',{name:'Menú',exact:true});
+  const nav=page.getByRole('navigation',{name:'Navegación principal'});
+  await expect(menu).toHaveAttribute('aria-expanded','false');
+  await expect(nav).not.toBeVisible();
+  await expect(page.getByRole('button',{name:'Letra grande'})).toBeVisible();
+  await expect(page.getByRole('link',{name:'Mis favoritas'})).toBeVisible();
+  expect(await page.locator('.site-header').evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(170);
+  await menu.click();await expect(nav).toBeVisible();
+  await expect(menu).toHaveAttribute('aria-expanded','true');
+  await page.keyboard.press('Tab');await expect(nav.getByRole('link',{name:'Inicio',exact:true})).toBeFocused();
+  await page.keyboard.press('Escape');await expect(menu).toBeFocused();await expect(nav).not.toBeVisible();
+  await menu.click();await nav.getByRole('link',{name:'Javier',exact:true}).click();
+  await expect(page.locator('h1')).toContainText('Villarreal');await expect(page.locator('h1')).toBeFocused();
+  await expect(nav).not.toBeVisible();
+  const portrait=await page.locator('.artist-portrait').boundingBox();
+  const prose=await page.locator('.artist-prose').boundingBox();
+  expect(portrait.y).toBeLessThan(450);expect(portrait.y+portrait.height).toBeLessThan(prose.y);
+  await menu.click();await nav.getByRole('link',{name:'Javier',exact:true}).click();
+  await expect(menu).toBeFocused();await expect(nav).not.toBeVisible();
+  await page.setViewportSize({width:1440,height:950});await expect(nav).toBeVisible();await expect(menu).not.toBeVisible();
+  await page.setViewportSize({width:390,height:844});await expect(nav).not.toBeVisible();
 });
 
 test('reading controls and collection remain usable when storage is unavailable',async({page})=>{

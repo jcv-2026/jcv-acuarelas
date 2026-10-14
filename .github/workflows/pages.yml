@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     name: Construir y comprobar la galería
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v7
@@ -29,7 +29,7 @@ jobs:
           cache: npm
 
       - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Instalar dependencias
         run: npm ci
@@ -41,14 +41,14 @@ jobs:
         run: npm test
 
       - name: Preparar los archivos para publicar
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
     name: Publicar la galería
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write

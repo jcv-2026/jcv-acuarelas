@@ -1,8 +1,10 @@
-# Acuarelas de Javier Cotelo Villareal
+# Acuarelas de Javier Cotelo Villarreal
 
-Galería de 409 obras en memoria de Javier Cotelo Villareal (1932–2026), con búsqueda, filtros por año, recorridos temáticos, cronología ilustrada, biografía, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
+Galería de 409 obras en memoria de Javier Cotelo Villarreal (1932–2026), con búsqueda, filtros por año, recorridos temáticos, cronología ilustrada, biografía, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
 
 La cabecera permite activar «Letra grande»: aumenta un 25 % el tamaño base del texto y recuerda la elección en ese navegador. La tipografía utiliza unidades relativas y la presentación se adapta también a pantallas de 320 píxeles.
+
+En móvil, la navegación se abre con «Menú»; la opción de letra grande y la selección personal permanecen visibles. La biografía presenta una [fotografía de Javier del archivo personal](docs/retrato-javier.md).
 
 ## Web publicada
 
@@ -27,6 +29,7 @@ Abre http://localhost:4173. La web se construye automáticamente antes de arranc
 src/                 Interfaz: HTML, CSS y JavaScript
 data/catalog.json    Fichas de las obras utilizadas por la web
 public/media/        Imagen completa y miniatura WebP de cada obra
+public/portraits/    Fotografía de Javier para su biografía
 public/fonts/        Tipografías locales y sus licencias
 catalog.config.json  Portada, obras destacadas y cubiertas de los recorridos
 scripts/             Construcción y servidor local

@@ -31,6 +31,7 @@ h1,h2,h3{overflow-wrap:anywhere}
 h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .site-header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;height:auto;min-height:110px;gap:16px;padding-block:18px}
+.menu-toggle{display:none}
 .brand{grid-column:1;grid-row:1;gap:12px;min-width:0}
 .brand-name{font-size:1.3rem;padding-left:14px;white-space:normal}
 .brand-name small{font-size:.875rem;letter-spacing:.12em}
@@ -142,15 +143,16 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 .home-periods img{height:240px;width:100%;object-fit:contain;background:#e7e9e0;padding:18px}
 .home-periods span{color:var(--muted);font-size:1rem}
 .home-periods strong{font:1.7rem/1.25 var(--serif)}
-.artist-heading{max-width:850px;margin-bottom:42px}
+.artist-heading{grid-area:heading;max-width:850px}
 .artist-dates{font-size:1.0625rem;line-height:1.8;color:var(--muted)}
-.artist-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:65px;align-items:start}
+.artist-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:'heading portrait' 'prose portrait';gap:32px 65px;align-items:start}
+.artist-prose{grid-area:prose}
+.artist-portrait{grid-area:portrait;max-width:480px;width:100%;justify-self:end}
+.artist-portrait img{width:100%;height:auto}
+.artist-portrait figcaption{font-size:.9375rem;line-height:1.6;color:var(--muted);padding-top:12px}
+.artist-portrait figcaption span{display:block}
 .artist-prose p{font-size:1.125rem;line-height:1.9;margin-bottom:24px}
 .artist-prose .artist-dedication{border-top:1px solid var(--line);padding-top:24px}
-.artist-art{padding:22px;background:#e7e9e0}
-.artist-art button{display:block;padding:0;width:100%}
-.artist-art img{max-height:580px;width:100%;object-fit:contain}
-.artist-art figcaption{font-size:.9375rem;margin-top:16px;color:var(--muted)}
 .bio-sources{border-top:1px solid var(--line);margin-top:50px;padding-top:30px}
 .bio-sources h2{font-size:2rem;margin-bottom:16px}
 .bio-sources p{color:var(--muted)}
@@ -177,6 +179,20 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
   .artist-layout{gap:32px}
 }
 @media(max-width:800px){
+  .site-header,.large-text .site-header{width:calc(100% - 40px);grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;min-height:0;padding-block:14px 10px}
+  .brand{gap:10px}
+  .brand-name{font-size:1.125rem;padding-left:10px}
+  .brand-name small{margin-top:5px}
+  .monogram{font-size:2.5rem}
+  .menu-toggle{grid-column:2;grid-row:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:6px 0 6px 8px;font-size:.9375rem}
+  .menu-toggle[aria-expanded=true]{color:var(--accent)}
+  .header-actions,.large-text .header-actions{grid-column:1/-1;grid-row:2;justify-content:space-between;width:100%;gap:8px}
+  .favorites-label{display:block;font-size:.875rem}
+  .site-header nav,.large-text .site-header nav{display:none;grid-column:1/-1;grid-row:3;width:100%;padding-top:8px;border-top:1px solid var(--line);gap:0 16px;justify-content:stretch}
+  .site-header.menu-open nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .site-header nav a{padding:12px 4px;font-size:1rem}
+  .site-header nav a[aria-current=page]{color:var(--accent)}
+  .site-header nav a[aria-current=page]:after{right:auto;width:28px;left:4px}
   .hero,.large-text .hero{grid-template-columns:1fr}
   .hero h1{font-size:clamp(2.7rem,9vw,4.75rem)}
   .hero .eyebrow{font-size:.875rem}
@@ -194,8 +210,8 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
   .period-heading{grid-template-columns:1fr;gap:24px}
   .period-date>p{font-size:2.5rem;margin-block:5px}
   .period-story h2{font-size:2.2rem}
-  .artist-layout{grid-template-columns:1fr}
-  .artist-art{max-width:480px}
+  .artist-layout{grid-template-columns:1fr;grid-template-areas:'heading' 'portrait' 'prose'}
+  .artist-portrait{justify-self:start}
   .home-periods{gap:16px}
   .home-periods img{height:190px;padding:10px}
   .site-footer{grid-template-columns:1fr}
@@ -204,26 +220,40 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
   .footer-bottom span:last-child{text-align:left}
 }
 @media(max-width:600px){
-  .site-header,.large-text .site-header{grid-template-columns:minmax(0,1fr);gap:12px}
-  .brand{grid-column:1;justify-self:start}
-  .brand-name{font-size:1.25rem}
-  .header-actions,.large-text .header-actions{grid-column:1;grid-row:2;justify-content:space-between;width:100%}
-  .favorites-label{display:block;font-size:.875rem}
-  .site-header nav,.large-text .site-header nav{grid-column:1;grid-row:3;justify-content:flex-start;gap:0 18px;width:100%}
-  .site-header nav a{font-size:.9375rem}
-  .hero{padding-top:30px}
-  .hero h1{font-size:clamp(2.5rem,11vw,3.8rem)}
+  .hero{padding-block:28px 36px;gap:28px;min-height:0}
+  .hero h1{font-size:clamp(2.5rem,10vw,3.5rem);margin-block:18px}
+  .hero-description{margin-bottom:20px}
+  .hero-description br{display:none}
+  .hero-footnote{margin-top:20px;line-height:1.6}
+  .hero-art{width:100%;padding:10px 4px 0}
+  .hero-art-backdrop{inset:0 5px 30px 16px;transform:rotate(2deg)}
+  .hero-art-button{padding:8px}
+  .hero-art figcaption{margin-top:14px}
   .intro-strip>span{font-size:.875rem}
   .intro-strip .strip-years{margin-left:0}
   .art-grid,.journeys-grid,.theme-grid,.timeline-works,.home-periods{grid-template-columns:1fr}
-  .card-image,.timeline-works .card-image{height:300px}
+  .card-image,.timeline-works .card-image{height:270px}
   .card-caption{flex-direction:row;gap:8px 18px}
-  .card-caption h3{font-size:1.6rem}
+  .card-caption h3{font-size:1.5rem}
   .theme-image,.journeys-grid .theme-image,.home-periods img{height:270px}
+  .quick-filters{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;padding:5px 4px 12px;margin:12px -4px;scroll-padding-inline:4px}
+  .quick-filters button{flex:none;white-space:nowrap}
+  .collection-toolbar .select-field{flex:1 1 55%;padding:5px 9px}
+  .collection-toolbar .year-select{flex:1 1 30%}
+  .results-toolbar{flex-wrap:wrap;gap:8px;padding-bottom:16px}
+  .results-toolbar>div{flex-wrap:wrap;gap:8px 16px}
+  .collection-header{padding-top:28px;padding-bottom:22px}
   .home-periods{gap:28px}
+  .home-periods a{display:grid;grid-template-columns:110px minmax(0,1fr);gap:6px 18px;align-content:center}
+  .home-periods img{grid-row:1/3;height:125px;padding:8px}
+  .home-periods span{align-self:end}
+  .home-periods strong{font-size:1.5rem;align-self:start}
   .home-chronology{padding-block:45px}
-  .chronology-page,.artist-page{padding-top:36px}
-  .chronology-intro h1,.artist-heading h1{font-size:2.8rem}
+  .chronology-page,.artist-page{padding-top:28px}
+  .chronology-intro h1,.artist-heading h1{font-size:2.8rem;margin-block:18px 20px}
+  .chronology-intro .large-prose{font-size:1.125rem}
+  .artist-layout{gap:26px}
+  .artist-portrait{max-width:360px}
   .period-nav{gap:8px}
   .period-nav a{padding:8px 12px}
   .timeline-period{padding-block:38px}
@@ -241,4 +271,22 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
   .detail-bottom button{font-size:.9375rem}
   .memory-note{padding:24px 20px}
   .artist-prose p{font-size:1.0625rem}
+}
+@media(min-width:360px) and (max-width:600px){
+  .art-grid,.journeys-grid,.theme-grid,.timeline-works{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px}
+  .card-image,.timeline-works .card-image,.theme-image,.journeys-grid .theme-image{height:210px}
+  .art-open{padding:14px}
+  .card-caption{flex-direction:column;gap:6px}
+  .card-caption h3,.theme-caption h3{font-size:1.3rem;line-height:1.3}
+  .card-family{letter-spacing:0;text-transform:none}
+  .card-year{font-size:.875rem}
+  .favorite-button{top:5px;right:5px}
+  .large-text .art-grid,.large-text .journeys-grid,.large-text .theme-grid,.large-text .timeline-works{grid-template-columns:1fr}
+  .large-text .card-image,.large-text .timeline-works .card-image,.large-text .theme-image,.large-text .journeys-grid .theme-image{height:300px}
+  .large-text .card-caption h3,.large-text .theme-caption h3{font-size:1.5rem}
+}
+@media(hover:none){
+  .art-open:hover img,.theme-card:hover img,.hero-art-button:hover,.button:hover{transform:none}
+  .view-work{display:none}
+  .hero-expand{opacity:1}
 }

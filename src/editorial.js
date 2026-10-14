@@ -52,7 +52,7 @@ export const periods = [
 ];
 
 export const biography = [
-  'Javier Cotelo Villareal nació en Madrid el 16 de agosto de 1932 y falleció en Roma el 10 de octubre de 2026. Arquitecto, fotógrafo, dibujante y pintor, encontró en el paisaje y en las personas motivos a los que dedicar su mirada.',
+  'Javier Cotelo Villarreal nació en Madrid el 16 de agosto de 1932 y falleció en Roma el 10 de octubre de 2026. Arquitecto, fotógrafo, dibujante y pintor, encontró en el paisaje y en las personas motivos a los que dedicar su mirada.',
   'Estudió Arquitectura en Madrid y se vinculó al Opus Dei en 1952. En 1962 se estableció en Roma, donde trabajó en los proyectos de Villa Tevere y Cavabianca. Acompañó a san Josemaría en sus desplazamientos y viajes por Europa durante más de dos décadas.',
   'En aquellos viajes fotografiaba detalles y soluciones arquitectónicas que después servían de referencia para su trabajo. En 2021 publicó Al volante de un santo, un libro de recuerdos cotidianos junto a san Josemaría, acompañado de dibujos y fotografías.',
   'También realizó el proyecto para la instalación del mosaico Mater Ecclesiae en la plaza de San Pedro, inaugurado en 1981. La ejecución del mosaico correspondió a Virgilio Cassio y sus colaboradores.',
