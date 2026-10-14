@@ -1,6 +1,8 @@
 # Acuarelas de Javier Cotelo Villareal
 
-Galería de 409 obras, con búsqueda por título o motivo, filtros por año, recorridos temáticos, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
+Galería de 409 obras en memoria de Javier Cotelo Villareal (1932–2026), con búsqueda, filtros por año, recorridos temáticos, cronología ilustrada, biografía, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
+
+La cabecera permite activar «Letra grande»: aumenta un 25 % el tamaño base del texto y recuerda la elección en ese navegador. La tipografía utiliza unidades relativas y la presentación se adapta también a pantallas de 320 píxeles.
 
 ## Web publicada
 
@@ -55,6 +57,8 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Las pruebas verifican datos e imágenes, búsqueda, filtros, favoritas, enlaces directos, zoom y exportaciones. Comprueban también la presentación a 390, 768 y 1440 píxeles. Las capturas se guardan en `test-results/`, fuera de Git.
+Las pruebas verifican datos e imágenes, búsqueda, filtros, favoritas, enlaces directos, zoom y exportaciones. Comprueban la cronología, las fuentes de la biografía y la presentación a 320, 390, 768 y 1440 píxeles, incluida la opción de letra grande. Las capturas se guardan en `test-results/`, fuera de Git.
 
 Las favoritas se guardan en el navegador. Una obra se puede enlazar con `#coleccion?obra=AC1489`; el visor admite flechas del teclado y Escape. La tecla `/` enfoca el buscador.
+
+La cronología está en `#cronologia` y la biografía en `#javier`. Se puede enlazar una etapa con `#cronologia?etapa=2022`. Los textos, las fuentes biográficas, las notas de lectura y las obras que ilustran las siete etapas están en `src/editorial.js`. Las etapas ordenan el archivo fotográfico de 2013 a 2026; la biografía recoge una trayectoria anterior a esos años. Los años de catálogo siguen la primera fotografía conservada cuando no existe una fecha de pintura documentada.

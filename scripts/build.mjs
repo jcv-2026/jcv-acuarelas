@@ -31,7 +31,7 @@ for (const work of catalog.works) {
 }
 
 fs.mkdirSync(out, {recursive: true});
-for (const name of ['index.html', 'styles.css', 'app.js', 'catalog.js']) {
+for (const name of ['index.html', 'styles.css', 'app.js', 'catalog.js', 'editorial.js', 'preferences.js']) {
   fs.copyFileSync(path.join(root, 'src', name), path.join(out, name));
 }
 fs.cpSync(path.join(root, 'public'), out, {
