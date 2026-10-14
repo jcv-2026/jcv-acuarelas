@@ -1,8 +1,8 @@
 # Acuarelas de Javier Cotelo Villarreal
 
-Galería de 409 obras en memoria de Javier Cotelo Villarreal (1932–2026), con búsqueda, filtros por año, recorridos temáticos, cronología ilustrada, biografía, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
+Galería de 411 obras en memoria de Javier Cotelo Villarreal (1932–2026), con búsqueda, filtros por año, recorridos temáticos, cronología ilustrada, biografía, favoritas y un visor ampliable. Las fotografías, las tipografías y los datos se sirven desde el propio sitio.
 
-La cabecera reúne idioma, apariencia y tamaño de letra en un panel «Preferencias». La web está traducida al español, inglés e italiano, incluidos los 409 títulos, las fichas y los textos editoriales. Por defecto, toma el primer idioma compatible de la lista del navegador y usa español si no encuentra ninguno. Se puede elegir un idioma manualmente o volver a «Idioma del navegador».
+La cabecera reúne idioma, apariencia y tamaño de letra en un panel «Preferencias». La web está traducida al español, inglés e italiano, incluidos los 411 títulos, las fichas y los textos editoriales. Por defecto, toma el primer idioma compatible de la lista del navegador y usa español si no encuentra ninguno. Se puede elegir un idioma manualmente o volver a «Idioma del navegador».
 
 La apariencia sigue el modo claro u oscuro del dispositivo y sus cambios mientras la web está abierta. También se puede fijar «Claro» u «Oscuro», o volver a «Sistema». «Letra grande» aumenta un 25 % el tamaño base del texto. Las tres preferencias se recuerdan en este navegador y se sincronizan entre pestañas. La búsqueda admite títulos y motivos en los tres idiomas, y cambiar de idioma conserva los filtros, las favoritas y los enlaces existentes.
 
@@ -39,7 +39,7 @@ tests/               Pruebas del catálogo y del navegador
 docs/                Criterios de selección fotográfica
 ```
 
-El repositorio contiene todo lo necesario para construir la galería desde un clon nuevo. `data/catalog.json` es el catálogo de la web; sus identificadores enlazan las fichas con las 818 imágenes de `public/media/`. Para corregir una ficha, edita ese catálogo y vuelve a construir. Para incorporar una obra, añade también su imagen y su miniatura WebP. Los campos `image` y `thumbnail` contienen sus nombres de archivo.
+El repositorio contiene todo lo necesario para construir la galería desde un clon nuevo. `data/catalog.json` es el catálogo de la web; sus identificadores enlazan las fichas con las 822 imágenes de `public/media/`. Para corregir una ficha, edita ese catálogo y vuelve a construir. Para incorporar una obra, añade también su imagen y su miniatura WebP. Los campos `image` y `thumbnail` contienen sus nombres de archivo.
 
 `catalog.config.json` permite cambiar la selección de portada mediante `heroId`, `featuredIds` y `collectionCovers`. La ruta `catalog` se resuelve respecto a ese archivo. `JCV_CONFIG` permite utilizar otra configuración y `JCV_CATALOG`, otro catálogo. `imageBaseUrl` indica desde dónde cargará las imágenes la web.
 

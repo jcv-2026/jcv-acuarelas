@@ -8,7 +8,7 @@ La selección compara composición, pinceladas, integridad del soporte, legibili
 
 Se prepararon 402 recortes geométricos. Las otras siete tomas seleccionadas conservan el encuadre completo. Solo se aplicaron recortes, giros y correcciones de perspectiva sobre copias, con herramientas fotográficas convencionales. Se mantuvieron las firmas y las anotaciones visibles. No se modificó el color ni se reconstruyeron zonas de la pintura mediante IA generativa.
 
-La web utiliza dos archivos WebP por obra: una imagen para el visor y una miniatura para las tarjetas. Esas 818 imágenes son las únicas fotografías incluidas en el repositorio. Los originales y las copias de trabajo permanecen en el archivo local.
+La web utiliza dos archivos WebP por obra: una imagen para el visor y una miniatura para las tarjetas. Tras la [ampliación fotográfica de octubre](importacion-fotografias-2026-10-14.md), la selección contiene 411 fichas y 822 imágenes de obras. El repositorio incluye también el retrato utilizado en la biografía. Los originales y las copias de trabajo permanecen en el archivo local.
 
 ## Títulos, autoría y fechas
 

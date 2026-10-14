@@ -1,5 +1,6 @@
 # Archivo fotográfico, originales, descartes y trabajo intermedio: solo local.
 /.local/
+/img/
 /paintings/
 /seleccionadas/
 /descartadas/
