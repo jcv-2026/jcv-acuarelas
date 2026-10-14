@@ -99,7 +99,9 @@ const notes = {
   AC1403: 'El archivo conserva también una fotografía de detalle de esta pintura.',
   AC1442: 'Las fotografías de dos días consecutivos podrían mostrar distintos estados de la misma pintura.',
   AC1468: 'La acuarela ligera deja ver el dibujo de líneas que sostiene la composición.',
-  AC1470: 'Se conservan dos grupos de fotografías de esta obra, tomados el mismo día.',
+  AC1470: 'Se conservan varias fotografías de esta obra. La nueva toma permite distinguir con claridad el molino junto al canal.',
+  AC1527: 'El año 2026 aparece junto a la firma. El lugar representado no está documentado.',
+  AC1536: 'La lámina reúne dos estudios florales, ambos firmados y fechados en 2026.',
 };
 
 export const artworkNote = work => notes[work.id] ?? work.notes;

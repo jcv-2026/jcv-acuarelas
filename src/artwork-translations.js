@@ -391,7 +391,7 @@ AC1461|Two chairs beneath a yellow parasol|Due sedie sotto un ombrellone giallo
 AC1463|Palm tree beside the pale sea|Palma accanto al mare chiaro
 AC1466|Pink clouds above green fields|Nuvole rosate sopra campi verdi
 AC1468|City skyline beneath a pink sky|Profilo urbano sotto un cielo rosato
-AC1470|Church courtyard with steps and a cypress|Cortile di chiesa con scala e cipresso
+AC1470|Windmill beside the canal|Mulino a vento accanto al canale
 AC1472|Two bare trees facing the fields|Due alberi spogli davanti ai campi
 AC1475|Leaning palm tree over the beach|Palma inclinata sopra la spiaggia
 AC1479|White mountains and reflected woodland|Montagne bianche e bosco riflesso
@@ -409,4 +409,6 @@ AC1503|Straw parasol beside the calm sea|Ombrellone di paglia accanto al mare ca
 AC1509|Autumn trees beside the water|Alberi autunnali accanto all’acqua
 AC1513|Wooden bench beside the water|Panchina di legno accanto all’acqua
 AC1515|Rocks and pines reflected in the water|Rocce e pini riflessi nell’acqua
+AC1527|Blue lake among conifers and mountains|Lago azzurro tra conifere e montagne
+AC1536|Blue flowers and yellow daffodils|Fiori azzurri e narcisi gialli
 `.trim().split('\n').map(line => { const [id, ...values] = line.split('|'); return [id, values]; }));

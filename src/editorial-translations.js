@@ -79,7 +79,9 @@ const notes = {
   AC1403: ['The archive also holds a detail photograph of this painting.', 'L’archivio conserva anche una fotografia di dettaglio di questo dipinto.'],
   AC1442: ['Photographs from two consecutive days may show different stages of the same painting.', 'Le fotografie di due giorni consecutivi potrebbero mostrare fasi diverse dello stesso dipinto.'],
   AC1468: ['The light watercolour reveals the line drawing supporting the composition.', 'L’acquerello leggero lascia intravedere il disegno lineare che sostiene la composizione.'],
-  AC1470: ['Two groups of photographs of this artwork survive, taken on the same day.', 'Si conservano due gruppi di fotografie di quest’opera, scattate nello stesso giorno.'],
+  AC1470: ['Several photographs of this artwork survive. The new photograph clearly shows the windmill beside the canal.', 'Si conservano diverse fotografie di quest’opera. La nuova immagine permette di distinguere chiaramente il mulino a vento accanto al canale.'],
+  AC1527: ['The year 2026 appears beside the signature. The location depicted is undocumented.', 'L’anno 2026 compare accanto alla firma. Il luogo raffigurato non è documentato.'],
+  AC1536: ['The sheet brings together two floral studies, both signed and dated 2026.', 'Il foglio riunisce due studi floreali, entrambi firmati e datati 2026.'],
 };
 
 export const editorialMessages = {};
