@@ -1,0 +1,23 @@
+{
+  "catalog": "./data/catalog.json",
+  "imageBaseUrl": "./media/",
+  "heroId": "AC1450",
+  "featuredIds": [
+    "AC1489",
+    "AC1509",
+    "AC1430",
+    "AC1394",
+    "AC0863",
+    "AC1030"
+  ],
+  "collectionCovers": {
+    "Campos y montañas": "AC1450",
+    "Bosques y jardines": "AC0501",
+    "Lagos y reflejos": "AC1489",
+    "Marinas y costas": "AC1503",
+    "Paisajes de nieve": "AC1394",
+    "Puentes y arquitectura": "AC1149",
+    "Vírgenes y maternidades": "AC0833",
+    "Maternidades de inspiración oriental": "AC0824"
+  }
+}

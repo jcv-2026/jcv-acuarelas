@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Un recorrido por las acuarelas del archivo de Javier Cotelo Villareal. Paisajes, luz y memoria en una colección para mirar despacio.">
+  <meta property="og:title" content="Javier Cotelo Villareal · Acuarelas">
+  <meta property="og:description" content="Una forma de mirar el mundo. Descubre su archivo de acuarelas.">
+  <meta property="og:type" content="website">
+  <title>Javier Cotelo Villareal · Acuarelas</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Javier Cotelo Villareal, inicio"><span class="monogram">jcv<span>.</span></span><span class="brand-name">Javier Cotelo Villareal<small>ACUARELAS</small></span></a>
+    <nav aria-label="Navegación principal"><a href="#inicio" data-nav="inicio">Inicio</a><a href="#coleccion" data-nav="coleccion">La colección</a><a href="#recorridos" data-nav="recorridos">Recorridos</a><a href="#archivo" data-nav="archivo">El archivo</a></nav>
+    <a class="favorites-link" href="#favoritas" aria-label="Mis favoritas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="favorites-label">Mi selección</span><span id="favorite-count">0</span></a>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading"><span class="loading-mark">jcv.</span><p>Abriendo el cuaderno…</p></div></main>
+  <footer class="site-footer"><div><a href="#inicio" class="footer-signature">Javier Cotelo Villareal<span>Acuarelas</span></a><p>El agua, el color y una manera de mirar.</p></div><div class="footer-links"><a href="#coleccion">La colección ↗</a><a href="#recorridos">Recorridos ↗</a><a href="#archivo">Acerca del archivo ↗</a></div><div class="footer-bottom"><span>Archivo de acuarelas · En construcción</span><span>Hecho para mirar despacio.</span></div></footer>
+  <dialog id="art-dialog" aria-labelledby="art-title"><div id="art-content"></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <noscript><p class="noscript">Activa JavaScript para explorar la colección y abrir las fichas de las obras.</p></noscript>
+</body>
+</html>

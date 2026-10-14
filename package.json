@@ -1,0 +1,19 @@
+{
+  "name": "javier-cotelo-acuarelas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "predev": "npm run build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
